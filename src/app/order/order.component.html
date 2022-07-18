@@ -1,0 +1,14 @@
+<div class="container">
+  <h2>Add cake</h2>
+  <button mat-raised-button color="primary" (click)="addCake()">+</button>
+
+  <h2>Remove cake</h2>
+  <button mat-raised-button color="accent" (click)="removeCake()">-</button>
+
+  <ng-container *ngIf="CakeTotal$ | async as cakeTotal; else initialValue">
+    <h2>Total: {{cakeTotal}}</h2>
+  </ng-container>
+  <ng-template #initialValue>
+    <h2>Total: 0</h2>
+  </ng-template>
+</div>
